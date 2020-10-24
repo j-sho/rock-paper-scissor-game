@@ -1,0 +1,34 @@
+        <div class="game-table">
+        <div class="player-part">
+        <h2>You picked</h2>
+        <div class="player-part__image">
+        <img src="images/icon-<%= buttonClicked %>.svg" alt="Icon <%= buttonClicked %>"/>
+        </div>
+        <div class="result-shadow shadow-first"></div>
+        <div class="result-shadow shadow-second"></div>
+        <div class="result-shadow shadow-third"></div>
+        <div class="result">
+        <h1 class="result-header">
+        <% if (result === 'player') { %>
+        You win
+        <% } else if (result === 'computer') { %>
+        You lose
+        <% } else { %>
+        Draw
+        <% } %>
+        </h1>
+        <form class="play-again" action="/" method="post">
+        <button type="submit" name="again">Play again</button>
+        </form>
+        </div>
+        <div class="comp-part">
+        <h2>The house picked</h2>
+        <div class="comp-part__image">
+        <img src="images/icon-<%= compChoice %>.svg" alt="Icon <%= compChoice %>"/>
+        </div>
+        <div class="result-shadow shadow-first"></div>
+        <div class="result-shadow shadow-second"></div>
+        <div class="result-shadow shadow-third"></div>
+        </div>
+        </div>
+        
