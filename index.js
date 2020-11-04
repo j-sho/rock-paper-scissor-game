@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 app.post("/", function(req, res) {
     let buttonClicked = Object.keys(req.body)[0];
-    console.log("button: " + buttonClicked);
+    // console.log("button: " + buttonClicked);
     if (buttonClicked === '5') {
         game.gameType = 3;
         game.buttonClicked = '';
@@ -41,10 +41,10 @@ app.post("/", function(req, res) {
     } else {
     game.buttonClicked = buttonClicked;
     let playerIndex = options_array.indexOf(buttonClicked);
-    console.log("Index from array: " + options_array.indexOf(buttonClicked));
+    // console.log("Index from array: " + options_array.indexOf(buttonClicked));
     let compIndex = Math.floor(Math.random() * game.gameType);
     game.compChoice = options_array[compIndex]; 
-    console.log("computer choicce: " + game.compChoice);
+    // console.log("computer choicce: " + game.compChoice);
     if (check_result[playerIndex][compIndex] > check_result[compIndex][playerIndex]) {
         game.win = 'player';
         game.score++;
@@ -54,7 +54,7 @@ app.post("/", function(req, res) {
     } else {
         game.win = 'draw';
     };
-    console.log("win: " + game.win);
+    // console.log("win: " + game.win);
 }
     res.redirect("/");
     });

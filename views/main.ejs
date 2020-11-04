@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/style.css">
   
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
   <body>
@@ -14,17 +14,22 @@
         <div class="score-table">
             <div class="score-table__list">
                 <ul>
+
+                    <% if (gameType === 5) { %>
+                    <li class="list-5">Rock</li>
+                    <li class="list-5">Paper</li>
+                    <li class="list-5">Scissors</li>
+                    <li class="list-5">Lizard</li>
+                    <li class="list-5">Spock</li>
+                    <% }  else {%>
                     <li>Rock</li>
                     <li>Paper</li>
                     <li>Scissors</li>
-                    <% if (gameType === 5) { %>
-                    <li>Lizard</li>
-                    <li>Spock</li>
                     <% } %>
                 </ul>
             </div>
             <div class="score-table__number">
-                <p>Score</p>
+                <p class="score-table__title">Score</p>
                 <p id="score-number"><%= score %></p>
             </div>
         </div>
@@ -37,11 +42,11 @@
         <%- include("check") -%>
         <% } %>
         
-        <div class="rules">
-            <button id="<%= gameType %>" onclick = "basicPopup(this.href, this.id); return false">Rules</button>
-        </div>
+        <!-- <div class="rules"> -->
+            <button id="<%= gameType %>" class="button button-rules"  onclick = "basicPopup(this.href, this.id); return false">Rules</button>
+<!--         </div> -->
         <form class="options" action="/" method="post">
-        <button type="submit" name="<%= gameType %>">Change game type (<%= gameType %>)</button>
+        <button type="submit" class="button button-type" name="<%= gameType %>">Game type (<%= gameType %>)</button>
         </form>
     </section>
 

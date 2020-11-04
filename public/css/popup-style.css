@@ -1,0 +1,31 @@
+.rule-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  color: hsl(229, 25%, 31%);
+}
+
+.rule-heading button {
+  border: none;
+  background: none;
+}
+
+.rule-heading button:active {
+  outline: none;
+}
+
+.rule-heading button:focus {
+  outline: none;
+}
+
+.rule-container {
+  width: 350px;
+  margin: -10px auto;
+  overflow: visisble;
+}
+
+.triangle {
+  width: 300px;
+  margin-top: 40px;
+}
